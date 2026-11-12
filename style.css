@@ -2,6 +2,7 @@
   --primary-color: tomato;
   --bg-light: #f4f4f4;
   --text-dark: #333;
+  --text-light: #fff;
   --font-main:
     system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
@@ -49,6 +50,50 @@ main {
   width: 90%;
   margin: auto;
   overflow: hidden;
+  padding: 3rem 0;
+}
+
+/* CONTROLS */
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Search Bar */
+
+.search-bar {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-bar label {
+  background-color: var(--primary-color);
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  color: var(--text-light);
+  border-radius: 1rem 0 0 1rem;
+}
+
+.search-bar #search-input {
+  border: 1px solid #aaa;
+  width: 75%;
+  height: 2rem;
+  padding: 0 1rem;
+  border-left: none;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.search-bar #search-input:hover {
+  border: 1px solid var(--primary-color);
+  border-left: none;
 }
 
 /* MEDIA QUERIES */
