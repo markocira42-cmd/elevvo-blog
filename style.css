@@ -36,7 +36,7 @@ header {
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 4px #555;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 header .logo {
@@ -78,7 +78,7 @@ main {
 
 .search-bar label {
   background-color: var(--primary-color);
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +90,7 @@ main {
 .search-bar #search-input {
   border: 1px solid #aaa;
   width: 75%;
-  height: 2rem;
+  height: 2.5rem;
   padding: 0 0.8rem;
   border-left: none;
   border-radius: 0 1rem 1rem 0;
@@ -104,6 +104,7 @@ main {
 /* Filter Buttons */
 
 .filter-buttons {
+  margin-bottom: 2rem;
   width: 100%;
   display: flex;
   align-items: center;
