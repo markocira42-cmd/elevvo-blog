@@ -1,5 +1,6 @@
 :root {
   --primary-color: tomato;
+  --bg-footer: rgb(113, 44, 32);
   --bg-light: #f4f4f4;
   --text-dark: #333;
   --text-light: #fff;
@@ -27,6 +28,10 @@ body {
   background-color: var(--bg-light);
   color: var(--text-dark);
   font-family: var(--font-main);
+}
+
+section {
+  margin-bottom: 3rem;
 }
 
 /* HEADER */
@@ -104,7 +109,6 @@ main {
 /* Filter Buttons */
 
 .filter-buttons {
-  margin-bottom: 2rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -129,6 +133,18 @@ main {
 
 .filter-btn:active {
   opacity: 0.8;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--bg-footer);
+  color: var(--text-light);
+  padding: 1rem;
+}
+
+footer p {
+  text-align: center;
 }
 
 /* MEDIA QUERIES */
