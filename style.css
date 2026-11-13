@@ -71,6 +71,10 @@ main {
   margin-bottom: 1rem;
 }
 
+.controls > h3 > label {
+  cursor: text;
+}
+
 /* Search Bar */
 
 .search-bar {
@@ -89,7 +93,8 @@ main {
   justify-content: center;
   padding: 0.8rem;
   color: var(--text-light);
-  border-radius: 1rem 0 0 1rem;
+  cursor: text;
+  border-radius: 2rem 0 0 2rem;
 }
 
 .search-bar #search-input {
@@ -98,7 +103,7 @@ main {
   height: 2.5rem;
   padding: 0 0.8rem;
   border-left: none;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 2rem 2rem 0;
 }
 
 .search-bar #search-input:hover {
@@ -158,5 +163,19 @@ footer p {
 
   main {
     width: 80%;
+  }
+
+  /* CONTROLS */
+  /* Search Bar */
+
+  .search-bar label {
+    height: 3rem;
+    padding: 1rem;
+  }
+
+  .search-bar #search-input {
+    width: 65%;
+    height: 3rem;
+    padding: 0 2rem;
   }
 }
