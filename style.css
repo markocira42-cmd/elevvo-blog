@@ -29,6 +29,7 @@ body {
   background-color: var(--bg-light);
   color: var(--text-dark);
   font-family: var(--font-main);
+  font-size: 1.1rem;
 }
 
 section {
@@ -161,7 +162,7 @@ main {
   border-radius: 10px;
   margin-bottom: 4rem;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   cursor: pointer;
   box-shadow: 0 4px 6px #ccc;
   transition: 0.3s ease;
@@ -179,7 +180,7 @@ main {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .image {
@@ -236,6 +237,11 @@ footer p {
 @media (min-width: 768px) {
   /*_____FOR DESKTOP_____*/
   /* GLOBAL */
+
+  body {
+    font-size: 1.2rem;
+  }
+
   /* HEADER */
 
   /* MAIN */
@@ -262,5 +268,29 @@ footer p {
 
   .filter-btn {
     padding: 1rem;
+  }
+
+  /* BLOG GRID */
+
+  #blog-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, auto)
+    );
+    grid-gap: 3rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Title */
+
+  .title {
+    margin-bottom: 1.2rem;
+    padding: 0 0.4rem;
+  }
+
+  /* Date */
+
+  .date {
+    margin-bottom: 1.2rem;
   }
 }
