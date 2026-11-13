@@ -143,26 +143,70 @@ main {
 /* BLOG GRID */
 
 #blog-grid {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 0 0.6rem;
+}
+
+/* Post-link */
+
+.post-link {
+  text-decoration: none;
+  color: var(--text-dark);
 }
 
 /* card (post) */
 
 .card {
-  background-color: #fff;
   border-radius: 10px;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px #ccc;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 6px var(--primary-color);
 }
 
 /* Image */
+
+.figure {
+  border-radius: inherit;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+}
 
 .image {
   display: block;
   width: 100%;
   height: auto;
-  margin: auto;
   border-radius: inherit;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+}
+
+/* Title */
+
+.title {
+  margin-bottom: 1rem;
+  padding: 0 0.8rem;
+}
+
+/* Date */
+
+.date {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Description */
+
+.description {
+  padding: 0 1.5rem;
 }
 
 /* FOOTER */
