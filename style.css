@@ -140,6 +140,31 @@ main {
   opacity: 0.8;
 }
 
+/* BLOG GRID */
+
+#blog-grid {
+}
+
+/* card (post) */
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+
+/* Image */
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border-radius: inherit;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 /* FOOTER */
 
 footer {
