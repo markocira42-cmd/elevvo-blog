@@ -85,7 +85,7 @@ main {
   width: 100%;
 }
 
-.search-bar label {
+.search-bar .search-icon {
   background-color: var(--primary-color);
   height: 2.5rem;
   display: flex;
@@ -168,7 +168,7 @@ footer p {
   /* CONTROLS */
   /* Search Bar */
 
-  .search-bar label {
+  .search-bar .search-icon {
     height: 3rem;
     padding: 1rem;
   }
