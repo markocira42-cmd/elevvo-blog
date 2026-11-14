@@ -162,6 +162,9 @@ searchInput.addEventListener('input', (e) => {
   });
 
   renderPosts(results);
+  filterBtns.forEach((btn) => {
+    unHighlightFilter(btn);
+  });
 });
 
 // Initial Page Load
