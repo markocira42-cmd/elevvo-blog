@@ -74,6 +74,12 @@ const unHighlightFilter = (btn) => {
   btn.classList.remove('current');
 };
 
+const unHighlightAllFilters = () => {
+  filterBtns.forEach((allBtns) => {
+    unHighlightFilter(allBtns);
+  });
+};
+
 const renderPosts = (posts) => {
   blogGrid.replaceChildren();
 
@@ -120,9 +126,7 @@ const renderPosts = (posts) => {
 
 filterBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
-    filterBtns.forEach((allBtns) => {
-      unHighlightFilter(allBtns);
-    });
+    unHighlightAllFilters();
 
     highlightFilter(btn);
 
@@ -162,9 +166,8 @@ searchInput.addEventListener('input', (e) => {
   });
 
   renderPosts(results);
-  filterBtns.forEach((btn) => {
-    unHighlightFilter(btn);
-  });
+
+  unHighlightAllFilters();
 });
 
 // Initial Page Load
