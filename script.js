@@ -15,6 +15,7 @@ const blogPosts = [
       'Before jumping into frameworks, mastering the DOM and core logic is essential. Here is why building from scratch makes you a better developer.',
     image: 'assets/images/tech-2.jpeg',
     alt: 'Laptop with code',
+    all: 'all',
   },
   {
     title:
@@ -25,6 +26,7 @@ const blogPosts = [
       "Stepping away from the IDE and into the wilderness is the best way to reset your mind and solve that bug you've been staring at for hours.",
     image: 'assets/images/travel-1.jpeg',
     alt: 'Mountain landscape',
+    all: 'all',
   },
   {
     title: 'The Ultimate Developer Breakfast',
@@ -34,6 +36,7 @@ const blogPosts = [
       'Fuelling up for a long day of debugging requires more caffeine. Here is a simple, high-protein breakfast to keep your focus sharp.',
     image: 'assets/images/food-1.jpeg',
     alt: 'Breakfast and coffee',
+    all: 'all',
   },
   {
     title: 'The Digital Nomad Setup Coding on the Road',
@@ -43,6 +46,7 @@ const blogPosts = [
       "You don't need a massive office to write great code. Here is how I optimize my workflow using a lightweight laptop and a reliable Wi-Fi connection.",
     image: 'assets/images/tech-1.jpeg',
     alt: 'Laptop and map',
+    all: 'all',
   },
   {
     title: 'Finding Inspiration in Ancient Architecture',
@@ -52,6 +56,7 @@ const blogPosts = [
       'Sometimes the best way to think about modern UI design is to look at structures built thousands of years ago. A journey through history.',
     image: 'assets/images/travel-2.jpeg',
     alt: 'City with pyramids',
+    all: 'all',
   },
   {
     title: 'The Friday Night Developer Feast',
@@ -61,6 +66,7 @@ const blogPosts = [
       'Cooking a great meal from scratch is alot like writing clean code. You need the right ingredients, patience, and a willingness to experiment.',
     image: 'assets/images/food-2.jpeg',
     alt: 'Grilled food',
+    all: 'all',
   },
 ];
 
@@ -183,6 +189,8 @@ searchInput.addEventListener('input', (e) => {
 
   if (results.length === 0) {
     createMessage('No results found');
+  } else if (inputValue === '') {
+    renderPosts(blogPosts.slice(0, 3));
   }
 });
 
