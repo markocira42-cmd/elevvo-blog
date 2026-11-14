@@ -151,6 +151,19 @@ filterBtns.forEach((btn) => {
   });
 });
 
-// Initial Load
+searchInput.addEventListener('input', (e) => {
+  const inputValue = searchInput.value.trim().toLowerCase();
+
+  const results = blogPosts.filter((post) => {
+    return Object.values(post)
+      .join()
+      .toLowerCase()
+      .includes(inputValue);
+  });
+
+  renderPosts(results);
+});
+
+// Initial Page Load
 
 renderPosts(blogPosts.slice(0, 3));
