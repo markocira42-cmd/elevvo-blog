@@ -9,7 +9,7 @@ const blogGrid = document.querySelector('#blog-grid');
 const blogPosts = [
   {
     title: 'Why I Still Write Vanilla JavaScript',
-    category: 'Tech',
+    category: 'tech',
     date: 'Nov 10, 2026',
     description:
       'Before jumping into frameworks, mastering the DOM and core logic is essential. Here is why building from scratch makes you a better developer.',
@@ -19,7 +19,7 @@ const blogPosts = [
   {
     title:
       "Disconnecting to Reconnect: A Hiker's Guide to Burnout",
-    category: 'Travel',
+    category: 'travel',
     date: 'Nov 05, 2026',
     description:
       "Stepping away from the IDE and into the wilderness is the best way to reset your mind and solve that bug you've been staring at for hours.",
@@ -28,7 +28,7 @@ const blogPosts = [
   },
   {
     title: 'The Ultimate Developer Breakfast',
-    category: 'Food',
+    category: 'food',
     date: 'Oct 28, 2026',
     description:
       'Fuelling up for a long day of debugging requires more caffeine. Here is a simple, high-protein breakfast to keep your focus sharp.',
@@ -37,7 +37,7 @@ const blogPosts = [
   },
   {
     title: 'The Digital Nomad Setup Coding on the Road',
-    category: 'Tech',
+    category: 'tech',
     date: 'Oct 15, 2026',
     description:
       "You don't need a massive office to write great code. Here is how I optimize my workflow using a lightweight laptop and a reliable Wi-Fi connection.",
@@ -46,7 +46,7 @@ const blogPosts = [
   },
   {
     title: 'Finding Inspiration in Ancient Architecture',
-    category: 'Travel',
+    category: 'travel',
     date: 'Sep 30, 2026',
     description:
       'Sometimes the best way to think about modern UI design is to look at structures built thousands of years ago. A journey through history.',
@@ -55,7 +55,7 @@ const blogPosts = [
   },
   {
     title: 'The Friday Night Developer Feast',
-    category: 'Food',
+    category: 'food',
     date: 'Sep 18, 2026',
     description:
       'Cooking a great meal from scratch is alot like writing clean code. You need the right ingredients, patience, and a willingness to experiment.',
@@ -74,8 +74,10 @@ const unHighlightFilter = (btn) => {
   btn.classList.remove('current');
 };
 
-const renderPosts = (blogPosts) => {
-  blogPosts.forEach((post, i) => {
+const renderPosts = (posts) => {
+  blogGrid.replaceChildren();
+
+  posts.forEach((post) => {
     const a = document.createElement('a');
     const card = document.createElement('div');
     const figure = document.createElement('figure');
@@ -106,7 +108,7 @@ const renderPosts = (blogPosts) => {
     h3.textContent = post.title;
     h3.classList.add('title');
 
-    em.textContent = `-${post.date}`;
+    em.textContent = `- ${post.date}`;
     em.classList.add('date');
 
     p.textContent = post.description;
@@ -118,13 +120,36 @@ const renderPosts = (blogPosts) => {
 
 filterBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
+    filterBtns.forEach((allBtns) => {
+      unHighlightFilter(allBtns);
+    });
+    highlightFilter(btn);
+
     const category = btn.dataset.category;
 
-    filterBtns.forEach((btn) => {
-      unHighlightFilter(btn);
-      highlightFilter(e.target);
-    });
+    if (category === 'all') {
+      renderPosts(blogPosts);
+    } else if (category === 'tech') {
+      const tech = blogPosts.filter(
+        (post) => post.category === 'tech'
+      );
+      renderPosts(tech);
+    } else if (category === 'travel') {
+      const travel = blogPosts.filter(
+        (post) => post.category === 'travel'
+      );
+      renderPosts(travel);
+    } else if (category === 'food') {
+      const food = blogPosts.filter(
+        (post) => post.category === 'food'
+      );
+      renderPosts(food);
+    } else {
+      renderPosts(blogPosts.slice(0, 3));
+    }
   });
 });
 
-renderPosts(blogPosts);
+// Initial Load
+
+renderPosts(blogPosts.slice(0, 3));

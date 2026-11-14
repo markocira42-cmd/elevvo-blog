@@ -57,7 +57,7 @@ main {
   width: 90%;
   margin: auto;
   overflow: hidden;
-  padding: 3rem 0;
+  padding-top: 3rem;
   min-height: 100vh;
 }
 
@@ -147,6 +147,7 @@ main {
   display: grid;
   grid-template-columns: auto;
   padding: 0 0.6rem;
+  margin-bottom: 0;
 }
 
 /* Post-link */
