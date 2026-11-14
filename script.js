@@ -4,11 +4,6 @@ const searchInput = document.querySelector('#search-input');
 
 const filterBtns = document.querySelectorAll('.filter-btn');
 
-const allFilter = filterBtns[0];
-const techFilter = filterBtns[1];
-const travelFilter = filterBtns[2];
-const foodFilter = filterBtns[3];
-
 const blogGrid = document.querySelector('#blog-grid');
 
 const blogPosts = [
@@ -79,7 +74,7 @@ const unHighlightFilter = (btn) => {
   btn.classList.remove('current');
 };
 
-const renderPosts = () => {
+const renderPosts = (blogPosts) => {
   blogPosts.forEach((post, i) => {
     const a = document.createElement('a');
     const card = document.createElement('div');
@@ -119,38 +114,17 @@ const renderPosts = () => {
   });
 };
 
-renderPosts();
-
 // Event Listeners
 
-allFilter.addEventListener('click', (e) => {
-  e.stopPropagation();
-  highlightFilter(e.target);
-  unHighlightFilter(techFilter);
-  unHighlightFilter(travelFilter);
-  unHighlightFilter(foodFilter);
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const category = btn.dataset.category;
+
+    filterBtns.forEach((btn) => {
+      unHighlightFilter(btn);
+      highlightFilter(e.target);
+    });
+  });
 });
 
-techFilter.addEventListener('click', (e) => {
-  e.stopPropagation();
-  highlightFilter(e.target);
-  unHighlightFilter(allFilter);
-  unHighlightFilter(travelFilter);
-  unHighlightFilter(foodFilter);
-});
-
-travelFilter.addEventListener('click', (e) => {
-  e.stopPropagation();
-  highlightFilter(e.target);
-  unHighlightFilter(allFilter);
-  unHighlightFilter(techFilter);
-  unHighlightFilter(foodFilter);
-});
-
-foodFilter.addEventListener('click', (e) => {
-  e.stopPropagation();
-  highlightFilter(e.target);
-  unHighlightFilter(allFilter);
-  unHighlightFilter(techFilter);
-  unHighlightFilter(travelFilter);
-});
+renderPosts(blogPosts);
