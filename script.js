@@ -90,6 +90,7 @@ const renderPosts = (posts) => {
 
     a.appendChild(card);
     a.classList.add('post-link');
+    a.ariaLabel = 'Blog post';
 
     card.appendChild(figure);
     card.appendChild(img);
@@ -123,6 +124,7 @@ filterBtns.forEach((btn) => {
     filterBtns.forEach((allBtns) => {
       unHighlightFilter(allBtns);
     });
+
     highlightFilter(btn);
 
     const category = btn.dataset.category;
