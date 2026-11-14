@@ -89,8 +89,8 @@ const renderPosts = (posts) => {
     const figure = document.createElement('figure');
     const img = document.createElement('img');
     const h3 = document.createElement('h3');
-    const em = document.createElement('em');
     const p = document.createElement('p');
+    const em = document.createElement('em');
 
     blogGrid.appendChild(a);
 
@@ -100,8 +100,8 @@ const renderPosts = (posts) => {
 
     card.appendChild(figure);
     card.appendChild(h3);
-    card.appendChild(em);
     card.appendChild(p);
+    card.appendChild(em);
     card.classList.add('card');
 
     figure.appendChild(img);
@@ -114,11 +114,11 @@ const renderPosts = (posts) => {
     h3.textContent = post.title;
     h3.classList.add('title');
 
-    em.textContent = `- ${post.date}`;
-    em.classList.add('date');
-
     p.textContent = post.description;
     p.classList.add('description');
+
+    em.textContent = `- ${post.date}`;
+    em.classList.add('date');
   });
 };
 

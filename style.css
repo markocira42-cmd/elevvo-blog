@@ -205,17 +205,17 @@ main {
   padding: 0 0.8rem;
 }
 
-/* Date */
-
-.date {
-  display: block;
-  margin-bottom: 1rem;
-}
-
 /* Description */
 
 .description {
   padding: 0 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Date */
+
+.date {
+  display: block;
 }
 
 /* FOOTER */
@@ -295,11 +295,5 @@ footer p {
   .title {
     margin-bottom: 1.2rem;
     padding: 0 0.4rem;
-  }
-
-  /* Date */
-
-  .date {
-    margin-bottom: 1.2rem;
   }
 }
