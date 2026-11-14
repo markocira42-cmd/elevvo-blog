@@ -128,6 +128,10 @@ const createMessage = (message) => {
   blogGrid.appendChild(p);
 };
 
+const clearInputField = (inputField) => {
+  inputField.value = '';
+};
+
 // Event Listeners
 
 filterBtns.forEach((btn) => {
@@ -158,6 +162,8 @@ filterBtns.forEach((btn) => {
     } else {
       renderPosts(blogPosts.slice(0, 3));
     }
+
+    clearInputField(searchInput);
   });
 });
 
