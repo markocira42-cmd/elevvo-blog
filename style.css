@@ -150,6 +150,12 @@ main {
   margin-bottom: 0;
 }
 
+#blog-grid > p {
+  text-align: center;
+  color: #000;
+  font-size: 1.4rem;
+}
+
 /* Post-link */
 
 .post-link {

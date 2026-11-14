@@ -122,6 +122,12 @@ const renderPosts = (posts) => {
   });
 };
 
+const createMessage = (message) => {
+  const p = document.createElement('p');
+  p.textContent = message;
+  blogGrid.appendChild(p);
+};
+
 // Event Listeners
 
 filterBtns.forEach((btn) => {
@@ -168,6 +174,10 @@ searchInput.addEventListener('input', (e) => {
   renderPosts(results);
 
   unHighlightAllFilters();
+
+  if (results.length === 0) {
+    createMessage('No results found');
+  }
 });
 
 // Initial Page Load
