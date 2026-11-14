@@ -93,7 +93,6 @@ const renderPosts = (posts) => {
     a.ariaLabel = 'Blog post';
 
     card.appendChild(figure);
-    card.appendChild(img);
     card.appendChild(h3);
     card.appendChild(em);
     card.appendChild(p);
