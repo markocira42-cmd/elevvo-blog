@@ -179,11 +179,17 @@ filterBtns.forEach((btn) => {
     }
 
     clearInputField(searchInput);
+    sessionStorage.removeItem('savedSearch');
   });
 });
 
 searchInput.addEventListener('input', (e) => {
   const inputValue = searchInput.value.trim().toLowerCase();
+
+  const savedSearch = sessionStorage.setItem(
+    'savedSearch',
+    inputValue
+  );
 
   renderPosts(searchResults(inputValue));
 
@@ -198,4 +204,16 @@ searchInput.addEventListener('input', (e) => {
 
 // Initial Page Load
 
-renderPosts(blogPosts.slice(0, 3));
+if (sessionStorage.getItem('savedSearch')) {
+  const savedSearch = sessionStorage.getItem('savedSearch');
+
+  searchInput.value = savedSearch;
+
+  if (searchResults(searchInput.value).length === 0) {
+    createMessage('No results found');
+  } else {
+    renderPosts(searchResults(searchInput.value));
+  }
+} else {
+  renderPosts(blogPosts.slice(0, 3));
+}
