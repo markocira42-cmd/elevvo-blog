@@ -106,7 +106,7 @@ main {
   padding: 0 0.8rem;
   border-left: none;
   border-radius: 0 var(--edges) var(--edges) 0;
-  font-size: clamp(1.2rem, 4vw, 1.4rem);
+  font-size: clamp(1.2rem, 4vw, 1.3rem);
 }
 
 .search-bar #search-input:hover {
