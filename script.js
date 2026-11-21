@@ -138,6 +138,15 @@ const clearInputField = (inputField) => {
   inputField.value = '';
 };
 
+const searchResults = (searchInputValue) => {
+  return blogPosts.filter((post) => {
+    return Object.values(post)
+      .join()
+      .toLowerCase()
+      .includes(searchInputValue);
+  });
+};
+
 // Event Listeners
 
 filterBtns.forEach((btn) => {
@@ -176,18 +185,11 @@ filterBtns.forEach((btn) => {
 searchInput.addEventListener('input', (e) => {
   const inputValue = searchInput.value.trim().toLowerCase();
 
-  const results = blogPosts.filter((post) => {
-    return Object.values(post)
-      .join()
-      .toLowerCase()
-      .includes(inputValue);
-  });
-
-  renderPosts(results);
+  renderPosts(searchResults(inputValue));
 
   unHighlightAllFilters();
 
-  if (results.length === 0) {
+  if (searchResults(inputValue).length === 0) {
     createMessage('No results found');
   } else if (inputValue === '') {
     renderPosts(blogPosts.slice(0, 3));
