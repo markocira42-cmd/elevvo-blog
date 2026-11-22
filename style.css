@@ -89,12 +89,12 @@ main {
 
 .search-bar .search-icon {
   background-color: var(--primary-color);
+  color: var(--text-light);
   height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.8rem;
-  color: var(--text-light);
   cursor: text;
   border-radius: var(--edges) 0 0 var(--edges);
 }
