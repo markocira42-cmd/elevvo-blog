@@ -10,34 +10,26 @@
     'Open Sans', 'Helvetica Neue', sans-serif;
   --edges: 3rem;
 }
-
 /*_____FOR MOBILE_____*/
-
 /* GLOBAL */
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   background-color: var(--bg-light);
   color: var(--text-dark);
   font-family: var(--font-main);
   font-size: 1.1rem;
 }
-
 section {
   margin-bottom: 3rem;
 }
-
 /* HEADER */
-
 header {
   display: flex;
   align-items: center;
@@ -45,14 +37,11 @@ header {
   box-shadow: 0 1px 4px #555;
   padding: 0.8rem 1rem;
 }
-
 header .logo {
   color: var(--primary-color);
   font-size: clamp(1.5rem, 4vw, 2rem);
 }
-
 /* MAIN */
-
 main {
   width: 90%;
   margin: auto;
@@ -60,25 +49,19 @@ main {
   padding-top: 3rem;
   min-height: 100vh;
 }
-
 /* CONTROLS */
-
 .controls {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .controls > h3 {
   margin-bottom: 1rem;
 }
-
 .controls > h3 > label {
   cursor: text;
 }
-
 /* Search Bar */
-
 .search-bar {
   margin-bottom: 2rem;
   display: flex;
@@ -86,7 +69,6 @@ main {
   justify-content: center;
   width: 100%;
 }
-
 .search-bar .search-icon {
   background-color: var(--primary-color);
   color: var(--text-light);
@@ -98,7 +80,6 @@ main {
   cursor: text;
   border-radius: var(--edges) 0 0 var(--edges);
 }
-
 .search-bar #search-input {
   border: 1px solid #aaa;
   width: 75%;
@@ -108,14 +89,11 @@ main {
   border-radius: 0 var(--edges) var(--edges) 0;
   font-size: clamp(1.2rem, 4vw, 1.3rem);
 }
-
 .search-bar #search-input:hover {
   border: 1px solid var(--primary-color);
   border-left: none;
 }
-
 /* Filter Buttons */
-
 .filter-buttons {
   width: 100%;
   display: flex;
@@ -123,7 +101,6 @@ main {
   justify-content: center;
   flex-wrap: wrap;
 }
-
 .filter-btn {
   border: 1px solid var(--primary-color);
   border-radius: var(--edges);
@@ -133,39 +110,28 @@ main {
   margin: 0 0 0.5rem 0.7rem;
   transition: 0.1s ease;
 }
-
 .filter-btn:hover {
   transform: translateY(-3px);
 }
-
 .filter-btn:active {
   opacity: 0.8;
 }
-
 /* BLOG GRID */
-
 #blog-grid {
   display: grid;
   grid-template-columns: auto;
   padding: 0 0.6rem;
   margin-bottom: 0;
 }
-
 #blog-grid > p {
   text-align: center;
   color: #000;
   font-size: 1.4rem;
 }
-
-/* Post-link */
-
 .post-link {
   text-decoration: none;
   color: var(--text-dark);
 }
-
-/* card (post) */
-
 .card {
   border-radius: 10px;
   text-align: center;
@@ -176,14 +142,10 @@ main {
   max-width: 400px;
   margin: 0 auto 4rem auto;
 }
-
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 4px 6px var(--primary-color);
 }
-
-/* Image */
-
 .figure {
   border-radius: inherit;
   border-bottom-right-radius: 0;
@@ -191,50 +153,33 @@ main {
   width: 100%;
   margin-bottom: 2rem;
 }
-
 .image {
   display: block;
   width: 100%;
   height: auto;
   border-radius: inherit;
 }
-
-/* Title */
-
 .title {
   margin-bottom: 1rem;
   padding: 0 0.8rem;
 }
-
-/* Description */
-
 .description {
   padding: 0 1.5rem;
   margin-bottom: 1rem;
 }
-
-/* Date */
-
 .date {
   display: block;
 }
-
 /* FOOTER */
-
 footer {
   background-color: var(--bg-footer);
   color: var(--text-light);
   padding: 1rem;
 }
-
 footer p {
   text-align: center;
 }
-
-/* TOGGLE CLASSES */
-
 /* Current Filter */
-
 .current {
   background-color: var(--primary-color);
   color: var(--text-light);
@@ -242,46 +187,27 @@ footer p {
 }
 
 /*_____MEDIA QUERIES_____*/
-
 @media (min-width: 768px) {
   /*_____FOR DESKTOP_____*/
-  /* GLOBAL */
-
   body {
     font-size: 1.2rem;
   }
-
-  /* HEADER */
-
-  /* MAIN */
-
   main {
     width: 80%;
     padding-bottom: 5rem;
   }
-
-  /* CONTROLS */
-  /* Search Bar */
-
   .search-bar .search-icon {
     height: 3rem;
     padding: 1rem;
   }
-
   .search-bar #search-input {
     width: 65%;
     height: 3rem;
     padding: 0 2rem;
   }
-
-  /* Filter Buttons */
-
   .filter-btn {
     padding: 1rem;
   }
-
-  /* BLOG GRID */
-
   #blog-grid {
     grid-template-columns: repeat(
       auto-fit,
@@ -290,9 +216,6 @@ footer p {
     grid-gap: 3rem;
     padding: 0 0.5rem;
   }
-
-  /* Title */
-
   .title {
     margin-bottom: 1.2rem;
     padding: 0 0.4rem;
