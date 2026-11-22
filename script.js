@@ -181,26 +181,7 @@ filterBtns.forEach((btn) => {
       category
     );
 
-    if (category === 'all') {
-      renderPosts(blogPosts);
-    } else if (category === 'tech') {
-      const tech = blogPosts.filter(
-        (post) => post.category === 'tech'
-      );
-      renderPosts(tech);
-    } else if (category === 'travel') {
-      const travel = blogPosts.filter(
-        (post) => post.category === 'travel'
-      );
-      renderPosts(travel);
-    } else if (category === 'food') {
-      const food = blogPosts.filter(
-        (post) => post.category === 'food'
-      );
-      renderPosts(food);
-    } else {
-      renderPosts(blogPosts.slice(0, 3));
-    }
+    addFilter(category);
 
     clearInputField(searchInput);
     sessionStorage.removeItem('savedSearch');
@@ -224,6 +205,8 @@ searchInput.addEventListener('input', (e) => {
   } else if (inputValue === '') {
     renderPosts(blogPosts.slice(0, 3));
   }
+
+  sessionStorage.removeItem('savedFilter');
 });
 
 // Page Reload
