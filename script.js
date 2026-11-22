@@ -147,6 +147,25 @@ const searchResults = (searchInputValue) => {
   });
 };
 
+const addFilter = (filterName) => {
+  const filter = blogPosts.filter(
+    (post) => post.category === filterName
+  );
+
+  if (filterName === 'all') {
+    renderPosts(blogPosts);
+  } else {
+    renderPosts(filter);
+  }
+
+  filterBtns.forEach((btn) => {
+    const category = btn.dataset.category;
+    if (category === filterName) {
+      highlightFilter(btn);
+    }
+  });
+};
+
 // Event Listeners
 
 filterBtns.forEach((btn) => {
@@ -156,6 +175,11 @@ filterBtns.forEach((btn) => {
     highlightFilter(btn);
 
     const category = btn.dataset.category;
+
+    const savedFilter = sessionStorage.setItem(
+      'savedFilter',
+      category
+    );
 
     if (category === 'all') {
       renderPosts(blogPosts);
@@ -202,7 +226,7 @@ searchInput.addEventListener('input', (e) => {
   }
 });
 
-// Initial Page Load
+// Page Reload
 
 if (sessionStorage.getItem('savedSearch')) {
   const savedSearch = sessionStorage.getItem('savedSearch');
@@ -214,6 +238,10 @@ if (sessionStorage.getItem('savedSearch')) {
   } else {
     renderPosts(searchResults(searchInput.value));
   }
+} else if (sessionStorage.getItem('savedFilter')) {
+  const savedFilter = sessionStorage.getItem('savedFilter');
+  addFilter(savedFilter);
 } else {
+  // Initial Page Load
   renderPosts(blogPosts.slice(0, 3));
 }
